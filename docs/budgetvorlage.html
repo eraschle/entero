@@ -6,7 +6,7 @@
     <title>Budgetvorlage</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Source+Sans+3:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
     <style>
         /* ============================================================
            Design Tokens
@@ -23,7 +23,7 @@
             --color-text-light: #9ca3af;
 
             --color-bg: #ffffff;
-            --color-bg-alt: #fafafa;
+            --color-bg-alt: #FAF8F5;
             --color-border: #e5e7eb;
             --color-border-strong: #d1d5db;
 
@@ -35,7 +35,7 @@
             --color-danger-bg: #fef2f2;
 
             --font-display: 'Playfair Display', Georgia, serif;
-            --font-body: 'Source Sans 3', -apple-system, BlinkMacSystemFont, sans-serif;
+            --font-body: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
 
             --radius-sm: 4px;
             --radius-md: 8px;
@@ -70,6 +70,22 @@
             background: var(--color-bg-alt);
             -webkit-font-smoothing: antialiased;
             -moz-osx-font-smoothing: grayscale;
+        }
+
+        /* Dezenter „atmender" Hintergrund-Puls (einheitlich auf allen Seiten) */
+        body::before {
+            content: '';
+            position: fixed;
+            inset: 0;
+            z-index: -1;
+            pointer-events: none;
+            background: radial-gradient(ellipse 80% 55% at 50% 0%, var(--color-primary-tint) 0%, transparent 68%);
+            opacity: 0.3;
+            animation: breathe 7s ease-in-out infinite;
+        }
+        @keyframes breathe {
+            0%, 100% { opacity: 0.22; transform: scaleY(1); }
+            50%      { opacity: 0.40; transform: scaleY(1.05); }
         }
 
         /* ============================================================
