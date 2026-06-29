@@ -1,6 +1,6 @@
 # Projekt: Sammlung veröffentlichter HTML-Seiten (GitHub Pages)
 
-Statische Website unter **https://eraschle.github.io/toolbox/**.
+Statische Website unter **https://stayingclean.github.io/toolbox/**.
 Das Repo dient als **Sammlung eigenständiger HTML-Seiten**, die nach und nach
 (häufig mit Claudes Hilfe aus bestehenden Vorlagen/Dokumenten digitalisiert)
 veröffentlicht werden — z. B. die interaktive Skillsliste und die Budgetvorlage.
