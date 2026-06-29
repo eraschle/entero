@@ -11,8 +11,8 @@ Deploy über GitHub Actions (`.github/workflows/deploy.yml`) — veröffentlicht
 ## Aufbau
 
 - **Quelle bleibt im Wurzelverzeichnis**, das **Ergebnis** liegt in `docs/`.
-- `docs/index.html` = Startseite (`/toolbox/`) = die generierte Skillsliste.
-- `docs/uebersicht.html` = generischer Hub, der alle Seiten verlinkt.
+- `docs/index.html` = Startseite (`/toolbox/`) = Übersicht (Hub, verlinkt alle Seiten).
+- `docs/skillsliste.html` = die generierte Skillsliste.
 - `docs/budgetvorlage.html` = eigenständige Budget-Seite (neutrale Vorlage).
 
 ## Neue HTML-Seite veröffentlichen
@@ -25,17 +25,17 @@ Wenn eine neue (oft digitalisierte) HTML-Seite dazukommt:
 3. **CSS muss in der Datei eingebettet bleiben** (kein externes Stylesheet), damit
    die Seite auch lokal ohne Server/Internet funktioniert.
 4. Die Fusszeile muss den Urheber-Credit enthalten (siehe Konvention unten).
-5. In `docs/uebersicht.html` eine Karte ergänzen (Link + Kurzbeschreibung).
+5. In `docs/index.html` (Übersicht) eine Karte ergänzen (Link + Kurzbeschreibung).
 
 ## Skillsliste pflegen (nicht von Hand editieren!)
 
-`docs/index.html` wird **generiert** — nicht direkt bearbeiten.
+`docs/skillsliste.html` wird **generiert** — nicht direkt bearbeiten.
 
 1. Inhalte in **`skills_daten.xlsx`** ändern (Blätter `Skills`, `Stufen`, `Kategorien`).
-2. **`build.bat`** doppelklicken (bzw. `uv run build.py`) → erzeugt `docs/index.html`
+2. **`build.bat`** doppelklicken (bzw. `uv run build.py`) → erzeugt `docs/skillsliste.html`
    aus `template.html` + Excel.
 3. Das Layout/Design steckt in `template.html` (nur die Datenzeile ist ein Platzhalter).
-4. `tools/seed_excel.py` erzeugt die Excel reproduzierbar neu aus `docs/index.html`
+4. `tools/seed_excel.py` erzeugt die Excel reproduzierbar neu aus `docs/skillsliste.html`
    (nur Erst-Einrichtung/Reset).
 
 Details für Nicht-Techniker: `ANLEITUNG.md`.
@@ -66,4 +66,4 @@ Dazu dieses CSS (Farben/Abstände an das jeweilige Theme der Seite anpassen):
 - Avatar kommt direkt von `https://github.com/eraschle.png` (aktualisiert sich
   automatisch, wenn das GitHub-Profilbild geändert wird).
 - Bei der Skillsliste steht der Credit in **`template.html`** (nicht in der
-  generierten `docs/index.html`), sonst direkt in der jeweiligen HTML-Datei.
+  generierten `docs/skillsliste.html`), sonst direkt in der jeweiligen HTML-Datei.

@@ -7,7 +7,7 @@ Skillsliste-Generator
 =====================
 
 Liest die Inhalte aus  skills_daten.xlsx  und erzeugt daraus die fertige
-Webseite  docs/index.html  (auf Basis von  template.html).
+Webseite  docs/skillsliste.html  (auf Basis von  template.html).
 
 Aufruf:  uv run build.py      (oder einfach build.bat doppelklicken)
 
@@ -31,7 +31,7 @@ sys.stderr.reconfigure(encoding="utf-8")
 ROOT = Path(__file__).resolve().parent
 XLSX = ROOT / "skills_daten.xlsx"
 TEMPLATE = ROOT / "template.html"
-OUTPUT = ROOT / "docs" / "index.html"   # Startseite im veröffentlichten Ordner
+OUTPUT = ROOT / "docs" / "skillsliste.html"   # generierte Skillsliste-Seite
 PLACEHOLDER = "var DATA = /*__BUILD_DATA__*/{};"
 
 # Anzeige-Name (Excel)  ->  interner Schlüssel (HTML/JS, darf sich NICHT ändern)
